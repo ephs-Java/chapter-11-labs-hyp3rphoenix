@@ -8,7 +8,8 @@ public class DiceSimulation {
 		final int NUMBER = 10000; // the number of times to roll the dice
 		
 		// create 2 Dice objects, die1 and die2
-	
+		Dice d1 = new Dice();
+		Dice d2 = new Dice();
 		
 		int count = 0; // number of times the dice were rolled
 		int snakeEyes = 0; // number of times snake eyes is rolled
@@ -20,6 +21,32 @@ public class DiceSimulation {
 
 		// create 2 dice, roll them 10000 times, and keep track of the doubles.
 		// what method(s) do you need to write in the Dice class to make this work?
+		int numOfDoubles = 0;
+		for(int c = 0; c < NUMBER; c++) {
+			d1.roll();
+			d2.roll();
+			if(d1.equals(d2)) {
+				if(d1.spots == 1) {
+					snakeEyes++;
+				}
+				else if(d1.spots == 2) {
+					twos++;
+				}
+				else if(d1.spots == 3) {
+					threes++;
+				}
+				else if(d1.spots == 4) {
+					fours++;
+				}
+				else if(d1.spots == 5) {
+					fives++;
+				}
+				else if(d1.spots == 6) {
+					sixes++;
+				}
+			}
+			count++;
+		}
 		
 		
 		// preformatted output to be used after the 10000 rolls above.
